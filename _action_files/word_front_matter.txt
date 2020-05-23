@@ -1,5 +1,3 @@
 ---
 layout: post
-
-Wrote this so long ago I don't even know where the code is. Unfinished of course. Something rotten in it I think. Fun stuff though.
 ---
