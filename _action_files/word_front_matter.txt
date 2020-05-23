@@ -1,3 +1,5 @@
 ---
 layout: post
+
+wrote this way back, never finished. don't know where the code is. Something rotten in it I think. fun stuff though
 ---
