@@ -171,7 +171,7 @@ window.onload = wrap_img;
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>This note explores the effect of varying wealth inequality on expected GDP growth rate in a simplified economy, under the assumption that consumer behavior is motivated by the local distribution of available consumption opportunities. First, I introduce a theoretical framework for estimating expected GDP growth rate given a distribution of wealth and a distribution of available consumption opportunities. Second, I apply the framework to explore how expected GDP growth rate varies with wealth inequality and distribution of opportunity.</p>
-<p>Consider a simple economy with no taxes or subsidies, composed of M discrete units of wealth distributed among N economic agents. Taking the value-added perspective, the increase of the GDP of the economy over a time period $\delta t$ - the GDP growth rate - can be written as the total wealth added through productive processes by the agents during the time period $\delta t$.</p>
+<p>Consider a simple economy with no taxes or subsidies, composed of M discrete units of wealth distributed among N economic agents. Taking the value-added perspective, the increase of the GDP of the economy over a time period $\delta t$ can be written as the total wealth added through productive processes by the agents during the time period $\delta t$.</p>
 <p>
 $$\delta GDP=\sum_{i=1}^{N} p_{i}-c_{i}$$
 </p>
@@ -190,11 +190,11 @@ $$E[\delta GDP]=r\sum_{w=0}^{M}N(w)\sum_{c=0}^{w} cP(c,w)$$
 <p>Where $N(w)$ is the number of economic agents having wealth $w$, the inner sum is over all possible amounts of wealth an economic agent of wealth $w$ can consume, and $P(c,w)$ is the probability that an economic agent with wealth $w$ will consume amount of wealth $c$.</p>
 <p>Assuming that the probability an agent with wealth $w$ consumes an amount $c$ is the number of opportunities to consume amount $c$ relative to the total number of consumption opportunities available to an agent with wealth $w$, $P(c,w)$ can be written as</p>
 <p>
-$$P(c,w) = \frac{O(c)}{\sum_{c=0}^{w}O(c)}=\frac{O(c)}{O_{a}(w)}$$
+$$P(c,w) = \frac{O(c)}{\sum_{c=0}^{w}O(c)}=\frac{O(c)}{A(w)}$$
 </p>
-<p>Where $O(c)$ is the number of opportunities to consume amount of wealth $c$, and $O_{a}(w)$ is the total number of consumption opportunities available to an economic agent of wealth $w$. The expected GDP growth rate is then</p>
+<p>Where $O(c)$ is the number of opportunities to consume amount of wealth $c$, and $A(w)$ is the total number of consumption opportunities available to an economic agent of wealth $w$. The expected GDP growth rate is then</p>
 <p>
-$$E[\delta GDP]=r\sum_{w=0}^{M}\frac{N(w)}{O_{a}(w)}\sum_{c=0}^{w}cO(c)$$
+$$E[\delta GDP]=r\sum_{w=0}^{M}\frac{N(w)}{A(w)}\sum_{c=0}^{w}cO(c)$$
 </p>
 <p>Given a wealth distribution $N(w)$ and an opportunity distribution $O(c)$, the expected GDP growth rate can be easily computed.</p>
 
