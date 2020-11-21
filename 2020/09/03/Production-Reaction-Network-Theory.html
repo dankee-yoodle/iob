@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Production Reaction Network Theory | Issues of Bliss</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Production Reaction Network Theory" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="PCMC + CRNT = PRNT" />
+<meta property="og:description" content="PCMC + CRNT = PRNT" />
+<link rel="canonical" href="https://dankee-yoodle.github.io/iob/2020/09/03/Production-Reaction-Network-Theory.html" />
+<meta property="og:url" content="https://dankee-yoodle.github.io/iob/2020/09/03/Production-Reaction-Network-Theory.html" />
+<meta property="og:site_name" content="Issues of Bliss" />
+<meta property="og:image" content="https://dankee-yoodle.github.io/iob/images/some_folder/your_image.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-09-03T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"PCMC + CRNT = PRNT","mainEntityOfPage":{"@type":"WebPage","@id":"https://dankee-yoodle.github.io/iob/2020/09/03/Production-Reaction-Network-Theory.html"},"@type":"BlogPosting","url":"https://dankee-yoodle.github.io/iob/2020/09/03/Production-Reaction-Network-Theory.html","headline":"Production Reaction Network Theory","dateModified":"2020-09-03T00:00:00-05:00","datePublished":"2020-09-03T00:00:00-05:00","image":"https://dankee-yoodle.github.io/iob/images/some_folder/your_image.png","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/iob/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://dankee-yoodle.github.io/iob/feed.xml" title="Issues of Bliss" /><link rel="shortcut icon" type="image/x-icon" href="/iob/images/favicon.ico"><!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Production Reaction Network Theory | Issues of Bliss</title>
+<meta name="generator" content="Jekyll v4.0.0" />
+<meta property="og:title" content="Production Reaction Network Theory" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="PCMC + CRNT = PRNT" />
+<meta property="og:description" content="PCMC + CRNT = PRNT" />
+<link rel="canonical" href="https://dankee-yoodle.github.io/iob/2020/09/03/Production-Reaction-Network-Theory.html" />
+<meta property="og:url" content="https://dankee-yoodle.github.io/iob/2020/09/03/Production-Reaction-Network-Theory.html" />
+<meta property="og:site_name" content="Issues of Bliss" />
+<meta property="og:image" content="https://dankee-yoodle.github.io/iob/images/some_folder/your_image.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-09-03T00:00:00-05:00" />
+<script type="application/ld+json">
+{"description":"PCMC + CRNT = PRNT","mainEntityOfPage":{"@type":"WebPage","@id":"https://dankee-yoodle.github.io/iob/2020/09/03/Production-Reaction-Network-Theory.html"},"@type":"BlogPosting","url":"https://dankee-yoodle.github.io/iob/2020/09/03/Production-Reaction-Network-Theory.html","headline":"Production Reaction Network Theory","dateModified":"2020-09-03T00:00:00-05:00","datePublished":"2020-09-03T00:00:00-05:00","image":"https://dankee-yoodle.github.io/iob/images/some_folder/your_image.png","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+<link href="https://unpkg.com/@primer/css/dist/primer.css" rel="stylesheet" />
+<link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css"><link type="application/atom+xml" rel="alternate" href="https://dankee-yoodle.github.io/iob/feed.xml" title="Issues of Bliss" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"> </script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head><body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/iob/">Issues of Bliss</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/iob/about/">About Me</a><a class="page-link" href="/iob/search/">Search</a><a class="page-link" href="/iob/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Production Reaction Network Theory</h1><p class="page-description">PCMC + CRNT = PRNT</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2020-09-03T00:00:00-05:00" itemprop="datePublished">
+        Sep 3, 2020
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      28 min read
+    
+</span></p>
+
+    
+
+    
+      
+        <div class="pb-5 d-flex flex-wrap flex-justify-end">
+          <div class="px-2">
+
+    <a href="https://github.com/dankee-yoodle/iob/tree/master/_notebooks/2020-09-03-Production-Reaction-Network-Theory.ipynb" role="button" target="_blank">
+<img class="notebook-badge-image" src="/iob/assets/badges/github.svg" alt="View On GitHub">
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://mybinder.org/v2/gh/dankee-yoodle/iob/master?filepath=_notebooks%2F2020-09-03-Production-Reaction-Network-Theory.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/iob/assets/badges/binder.svg" alt="Open In Binder"/>
+    </a>
+</div>
+
+          <div class="px-2">
+    <a href="https://colab.research.google.com/github/dankee-yoodle/iob/blob/master/_notebooks/2020-09-03-Production-Reaction-Network-Theory.ipynb" target="_blank">
+        <img class="notebook-badge-image" src="/iob/assets/badges/colab.svg" alt="Open In Colab"/>
+    </a>
+</div>
+        </div>
+      </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <ul class="section-nav">
+<li class="toc-entry toc-h2"><a href="#Abstract">Abstract </a></li>
+<li class="toc-entry toc-h2"><a href="#Chemical-Reaction-Network-Theory">Chemical Reaction Network Theory </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Structural-Constraints-on-Dynamics">Structural Constraints on Dynamics </a></li>
+<li class="toc-entry toc-h3"><a href="#Evolutionary-Constraints-on-Dynamics">Evolutionary Constraints on Dynamics </a></li>
+<li class="toc-entry toc-h3"><a href="#Conservation-of-Mass">Conservation of Mass </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#Production-of-Commodities-by-Means-of-Commodities">Production of Commodities by Means of Commodities </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#PCMC-$\S$-1">PCMC $\S$ 1 </a></li>
+<li class="toc-entry toc-h3"><a href="#PCMC-$\S$-3">PCMC $\S$ 3 </a></li>
+<li class="toc-entry toc-h3"><a href="#PCMC-$\S$-4">PCMC $\S$ 4 </a></li>
+<li class="toc-entry toc-h3"><a href="#PCMC-$\S$-5">PCMC $\S$ 5 </a></li>
+<li class="toc-entry toc-h3"><a href="#PCMC-$\S$-10">PCMC $\S$ 10 </a></li>
+<li class="toc-entry toc-h3"><a href="#PCMC-$\S$-11">PCMC $\S$ 11 </a></li>
+<li class="toc-entry toc-h3"><a href="#PCMC-$\S$-12">PCMC $\S$ 12 </a></li>
+<li class="toc-entry toc-h3"><a href="#PCMC-$\S$-23">PCMC $\S$ 23 </a></li>
+<li class="toc-entry toc-h3"><a href="#PCMC-$\S$-24">PCMC $\S$ 24 </a></li>
+<li class="toc-entry toc-h3"><a href="#PCMC-$\S$-33">PCMC $\S$ 33 </a></li>
+<li class="toc-entry toc-h3"><a href="#PCMC-$\S$-34">PCMC $\S$ 34 </a></li>
+<li class="toc-entry toc-h3"><a href="#PCMC-$\S$-50">PCMC $\S$ 50 </a></li>
+<li class="toc-entry toc-h3"><a href="#PCMC-$\S$-51">PCMC $\S$ 51 </a></li>
+<li class="toc-entry toc-h3"><a href="#PCMC-$\S$-52">PCMC $\S$ 52 </a></li>
+<li class="toc-entry toc-h3"><a href="#PCMC-$\S$-53">PCMC $\S$ 53 </a></li>
+<li class="toc-entry toc-h3"><a href="#PCMC-$\S$-56">PCMC $\S$ 56 </a></li>
+</ul>
+</li>
+<li class="toc-entry toc-h2"><a href="#From-PCMC-to-CRNT">From PCMC to CRNT </a></li>
+<li class="toc-entry toc-h2"><a href="#From-CRNT-to-Production-Reaction-Network-Theory">From CRNT to Production Reaction Network Theory </a>
+<ul>
+<li class="toc-entry toc-h3"><a href="#Mass-Action-Kinetics">Mass Action Kinetics </a></li>
+<li class="toc-entry toc-h3"><a href="#Biological-Switches">Biological Switches </a></li>
+<li class="toc-entry toc-h3"><a href="#Deficiency-Theorums">Deficiency Theorums </a></li>
+</ul>
+</li>
+</ul><!--
+#################################################
+### THIS FILE WAS AUTOGENERATED! DO NOT EDIT! ###
+#################################################
+# file to edit: _notebooks/2020-09-03-Production-Reaction-Network-Theory.ipynb
+-->
+
+<div class="container" id="notebook-container">
+        
+    
+    
+<div class="cell border-box-sizing code_cell rendered">
+
+</div>
+    
+
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Abstract">
+<a class="anchor" href="#Abstract" aria-hidden="true"><span class="octicon octicon-link"></span></a>Abstract<a class="anchor-link" href="#Abstract"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this note, I review the formalism and ideas of Chemical Reaction Network Theory; review the formalism and ideas of Sraffa's Production of Commodities by Means of Commodities; identify how aspects of Production of Commodities by Means of Commodities can be reintepreted as special cases of Chemical Reaction Network Theory; and finally suggest how ideas from Chemical Reaction Network Theory might be applied in an economic setting I define as Production Reaction Network Theory.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Chemical-Reaction-Network-Theory">
+<a class="anchor" href="#Chemical-Reaction-Network-Theory" aria-hidden="true"><span class="octicon octicon-link"></span></a>Chemical Reaction Network Theory<a class="anchor-link" href="#Chemical-Reaction-Network-Theory"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Assume there exists a solution of $K$ different chemicals in a chemical reactor. Assume the composition of the solution - the abundances of the chemicals in the reactor - can change over time as a result of chemical reactions occuring in the solution or chemical flows into the reactor. Assume the solution exists in a world allowing for $J$ different chemical reactions, where each reaction occurs at some rate and upon occurrence consumes some combination of the $K$ different chemicals to produce another.</p>
+<p>If $a_{jk}$ is the number of molecules of chemical $k$ consumed by reaction $j$, $b_{jk}$ is the number of molecules of chemical $k$ produced by reaction $j$, and $q_j$ is the number of times reaction $j$ occurs per unit-time, then the solution's "chemical reaction network" can be represented as</p>
+<p>
+$$a_{11}+a_{12}+\dots+a_{1K} \overset{q_1}{\rightarrow} b_{11}+b_{12}+\dots+b_{1K}$$
+
+
+$$a_{21}+a_{22}+\dots+a_{2K} \overset{q_2}{\rightarrow} b_{21}+b_{22}+\dots+b_{2K}$$
+
+
+$$\vdots$$
+
+
+$$a_{J1}+a_{J2}+\dots+a_{JK} \overset{q_J}{\rightarrow} b_{J1}+b_{J2}+\dots+b_{JK}$$
+</p>
+<p>Chemical Reaction Network Theory (CRNT) seeks to understand and predict the dynamics of the composition of the solution by studying the constraints imposed by the available chemical reaction network. More specifically, defining the abundance - the number of molecules - of chemical $k$ in the solution at time $t$ as $C_k(t)$, CRNT seeks to connect the time-evolution of the functions $C_k(t)$, $k=1...K$ to the structure of the network defined by the available chemical reactions and the rates at which they occur.</p>
+<p>This section will review some of the ideas and formalism of CRNT that are be useful in reintepreting Sraffa's framework as a special case of CRNT.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Structural-Constraints-on-Dynamics">
+<a class="anchor" href="#Structural-Constraints-on-Dynamics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Structural Constraints on Dynamics<a class="anchor-link" href="#Structural-Constraints-on-Dynamics"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The structure of the available chemical reaction network - defined by the specific forms of the available chemical reactions, the rates at which those reactions occur, and the chemical flow into the reactor - constrains the dynamics of the chemical abundances.</p>
+<p>If a solution is isolated, meaning there are no chemical flows in or out of the reactor, such that the set of available chemical reactions is the only means by which the composition of the solution may change over time, then the rate of change of the abundance of chemical $k$ is given by the sum over all reactions $j=1...J$ of the the product of the difference between the number of molecules of chemical $k$ produced and consumed by reaction $j$ and the number of times reaction $j$ occurs per unit-time.</p>
+<p>
+$$\frac{dC_k(t)}{dt}=q_1(b_{1k}-a_{1k})+q_2(b_{2k}-a_{2k})+\dots+q_J(b_{Jk}-a_{Jk})$$
+</p>
+<p>Generalizing from the single chemical equation, defining $\vec{C(t)}$ as the $K$x$1$-dimensional vector of chemical abundances, $A$ as the $J$x$K$-dimensional matrix with entries $[A]_{jk}=a_{jk}$, and $B$ as the $J$x$K$-dimensional matrix with entries $[B]_{jk}=b_{jk}$, the rate of change of the abundances of the chemicals in the solution can be written as</p>
+<p>
+$$\frac{d\vec{C(t)}}{dt}=(B-A)^T\vec{q}$$
+</p>
+<p>Where the superscript $T$ refers to the matrix transpose and $\vec{q}$ is the $J$x$1$-dimensional vector of reaction rates defined in the chemical reaction network. If the solution is not isolated, meaning there are chemical flows in or out of the solution, then the structural constraint takes the form</p>
+<p>
+$$\frac{d\vec{C(t)}}{dt}=(B-A)^T\vec{q} + \vec{f}$$
+</p>
+<p>where $\vec{f}$ is the $Kx1$-dimensional vector of chemical fluxes. The structural constraint imposes inherent limitations on the dynamics of the composition of the solution: in an isolated system it is not possible for the composition to move in a direction not in the span of the vector representing the available reactions, and in a non-isolated system it is not possible for the composition to move in a direction not spanned by the the sum of the vector representing the available reactions and the vector representing the chemical flux.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Evolutionary-Constraints-on-Dynamics">
+<a class="anchor" href="#Evolutionary-Constraints-on-Dynamics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Evolutionary Constraints on Dynamics<a class="anchor-link" href="#Evolutionary-Constraints-on-Dynamics"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The evolution of the composition of the solution over time must obey the structural constraint. That said, there are an infinite number of ways the solution might evolve while still obeying the structural constraint - there is room to define an additional constraint, one which dictates how the composition of the solution will actually evolve within the structure of the available chemical reaction network.</p>
+<p>In general, the additional constraint can be any vector function which exists in the span of the structural constraint. For a particular example, if the composition of the solution is assumed to be stable, such that the amount of each chemical in the solution is conserved over time, then there exists an evolutionary constraint</p>
+<p>
+$$\frac{d\vec{C(t)}}{dt}=\vec{0}$$
+</p>
+<p>For another particular example, if the composition of the solution is assumed to have uniform chemical growth, such that for each chemical, in the words of Sraffa, the rate by which the quantity produced exceeds the quantity used up in production is the same, then there exists an evolutionary constraint</p>
+$$\frac{d\vec{C(t)}}{dt}=\pi A^T \vec{q}$$<p></p>
+<p>which represents a system of $K$ equations where the $k$th equation is</p>
+<p>
+$$\frac{dC_k(t)}{dt}=\pi (q_1A_{1k}+q_2A_{2k}+\dots+q_JA_{Jk})$$
+</p>
+<p>which implies that $q_1A_{1k}+q_2A_{2k}+\dots+q_JA_{Jk}$ is the amount of chemical $k$ used up in production each unit-time and ($q_1A_{1k}+q_2A_{2k}+\dots+q_JA_{Jk})(1+\pi)$ is the amount of chemical $k$ produced each unit-time for each chemical $k=1...K$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Conservation-of-Mass">
+<a class="anchor" href="#Conservation-of-Mass" aria-hidden="true"><span class="octicon octicon-link"></span></a>Conservation of Mass<a class="anchor-link" href="#Conservation-of-Mass"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The total mass of the chemical reactor system must be conserved, where the chemical reactor system includes the solution in the reactor and all mass sources and sinks that interact with the solution in the reactor.</p>
+<p>Under the assumption that the only possible mass sources and sinks are the chemical flow into the solution and the chemical reactions themselves, conservation of mass requires that the change in mass of the solution must equal the change in mass caused by the chemical reactions plus the change of mass caused by the chemical flow into the system. Or, in other words, the change in mass per-unit-time implied by the evolutionary constraint must match the change in mass per-unit-time implied by the structural constraint.</p>
+<p>
+$$\vec{m} \cdot \left[ \frac{dC_k(t)}{dt}\right ]_{evolutionary} = \vec{m} \cdot \left[ \frac{dC_k(t)}{dt}\right ]_{structural}$$
+</p>
+<p>where $\vec{m}$ is a vector of chemical masses; $m_k$ is the mass of one molecule of chemical $k$. Chemistry tends to work with relative masses. One chemical is defined as having the unit-amount of mass, and the masses of the other chemicals are defined relative to that unit-amount. Traditionally, one molecule of carbon-12 is defined as having the unit-amount of mass, and the masses of the other chemicals are measured relative to the that unit-amount, called a "mole" for short.</p>
+<p>Plugging specific structural and evolutionary constraints into this equation leads to a system that can be used to determine the vectors of reaction rates and chemical masses that permit the solution to evolve in the specified way given the specifed structure of the reaction network.</p>
+<p>For example, if the system is assumed to have an isolated structural constraint and a stable evolutionary constraint, then</p>
+<p>
+$$\vec{m} \cdot (B-A)^T\vec{q} = \vec{m} \cdot \vec{0}$$
+</p>
+<p>
+$$\vec{m} \cdot (B-A)^T\vec{q} = 0$$
+</p>
+<p>Under the assumption that both $\vec{m}$ and $\vec{q}$ are non-negative, this equation will be satisfied if either $(B-A)^T\vec{q}=\vec{0}$ or $(B-A)\vec{m}=\vec{0}$.</p>
+<p>For another example, if the system is assumed to have an isolated structural constraint and a uniform growth evolutionary constraint, then</p>
+<p>
+$$\vec{m} \cdot (B-A)^T\vec{q} = \vec{m} \cdot \pi A^T \vec{q}$$
+</p>
+<p>
+$$\vec{m} \cdot [B-(1+\pi)A]^T\vec{q} = 0$$
+</p>
+<p>Under the same assumption of non-negativity, this equation will be satisfied if either $[B-(1+\pi)A]^T\vec{q}=\vec{0}$ or $[B-(1+\pi)A]\vec{m}=\vec{0}$.</p>
+<p>It is generally safe to assume that each chemical has a non-negative mass; and it is usually convenient to assume that each reaction rate is non-negative. If the only solution to the $\vec{q}$ equation involves negative reaction rates, then those reaction rates can be made positive by switching the sets of chemicals which are consumed and produced; a negative reaction rate can be thought of as implying that the reaction must be reversed.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Production-of-Commodities-by-Means-of-Commodities">
+<a class="anchor" href="#Production-of-Commodities-by-Means-of-Commodities" aria-hidden="true"><span class="octicon octicon-link"></span></a>Production of Commodities by Means of Commodities<a class="anchor-link" href="#Production-of-Commodities-by-Means-of-Commodities"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>This section will review the aspects of Sraffa's Production of Commodities by Means of Commodities (PCMC) which can be reinterpreted as special cases of CRNT.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PCMC-$\S$-1">
+<a class="anchor" href="#PCMC-%24%5CS%24-1" aria-hidden="true"><span class="octicon octicon-link"></span></a>PCMC $\S$ 1<a class="anchor-link" href="#PCMC-%24%5CS%24-1"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In section $1$, Sraffa asks us to consider an extremely simple society which produces just enough to maintain itself. In this society seperate commodities are produced by separate indistries and are exchanged for one another at a market held after the harvest. Every year, 400 quarters of wheat and 20 tons of iron are consumed to produce 400 quarters of wheat and 20 tons of iron through execution of the following methods of production.</p>
+<p>
+$$280qr. wood + 12t. iron \rightarrow 400qr. wood$$
+
+
+$$120qr. wood + 8t. iron \rightarrow 20t. iron$$
+</p>
+<p>Nothing is added by production to the possessions of society; but each commodity, which initially was distributed between the individuals according to their needs, is found at the end of the year to be entirely concentrated in the hands of its producer. In this society, there is a unique set of exchange values which if adopted by the market restores the original distribution of the products and makes it possible for the process to be repeated; such values spring directly from the methods of production. In this particular example, the exchange values required are $10 qr. wheat = 1t. iron$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PCMC-$\S$-3">
+<a class="anchor" href="#PCMC-%24%5CS%24-3" aria-hidden="true"><span class="octicon octicon-link"></span></a>PCMC $\S$ 3<a class="anchor-link" href="#PCMC-%24%5CS%24-3"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In section three, generalizing from the specific cases already presented, Sraffa states the general conditions of production which must be satisfied by the commodity exchange values if they are to allow for the restoration of the initial distribution of commodities when adopted by the market. These conditions of production are as follows:</p>
+<p>
+$$(A_{a}p_a+B_{a}p_{a}+\dots+K_{a}p_{k}) = A p_{a}$$
+
+
+$$(A_{b}p_a+B_{b}p_{b}+\dots+K_{b}p_{k}) = B p_{b}$$
+
+
+$$\vdots$$
+
+
+$$(A_{k}p_a+B_{k}p_{a}+\dots+K_{k}p_{k}) = K p_{k}$$
+</p>
+<p>which indicates that each of the $K$ commodities <em>'a'</em>, <em>'b'</em>,..., <em>'k'</em> are produced by a seperate industry; that the quantity of <em>'a'</em> anually produced is $A$, etc; and that $A_a$, $B_a$,...,$K_a$ are the quantities of <em>'a'</em>, <em>'b'</em>,..., <em>'k'</em> annually consumed by the industry which produces $A$, etc.</p>
+<p>Plugging the methods of production of the extremely simple society described in section 1 into these conditions of production and simplifying leads to the system of equations</p>
+<p>
+$$280p_W + 12p_I = 400p_w \rightarrow 120p_W = 12p_I \rightarrow 10p_W=1p_I$$
+
+
+$$120p_W + 8p_I = 20p_I \rightarrow 120p_W = 12P_I \rightarrow 10p_W=1p_I$$
+</p>
+<p>which implies that the commodity exchange values which if adopted by the market restore the original distribution of products and makes it possible for the process to be repeated must satisfy $10p_W=1p_I$, which matches the solution asserted by Sraffa in section 1.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PCMC-$\S$-4">
+<a class="anchor" href="#PCMC-%24%5CS%24-4" aria-hidden="true"><span class="octicon octicon-link"></span></a>PCMC $\S$ 4<a class="anchor-link" href="#PCMC-%24%5CS%24-4"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In section $4$, Sraffa asks us to consider a society that produces more than the minimum necessary for replacement and thus has a surplus at the end of each harvest which must be distributed. He assumes that the surplus (or profit) must be distributed in proportion to the means of production (or capital) advanced in each industry; and that such a proportion (the rate of profit) cannot be determined before we know the prices of the commodities. Accordingly, he adds the rate of profit (which he asserts must be uniform for all industries) to the methods of production as an unknown which he calls $r$, and the system becomes</p>
+<p>
+$$(A_{a}p_a+B_{a}p_{a}+\dots+K_{a}p_{k})(1+r) = A p_{a}$$
+
+
+$$(A_{b}p_a+B_{b}p_{b}+\dots+K_{b}p_{k})(1+r) = B p_{b}$$
+
+
+$$\vdots$$
+
+
+$$(A_{k}p_a+B_{k}p_{a}+\dots+K_{k}p_{k})(1+r) = K p_{k}$$
+</p>
+<p>This additional distributional assumption is necessary, because, as Sraffa says, without it the system becomes self-contradictory - if you apply the conditions of production defined in $\S 3$, then you find an inconsistant system of equations for the distribution-restoring commodity exchange values. The addition of an additional variable which characterizes the surplus resolves the inconsistency.</p>
+<p>It is worth noting that the additional variable $r$ is added only to the conditions of production, not to the methods of production. That is, Sraffa does not assume that $(1+r)A_a$ units of commodity <em>'a'</em> are actually used by the industry which produces $A$ units of <em>'a'</em>, etc.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PCMC-$\S$-5">
+<a class="anchor" href="#PCMC-%24%5CS%24-5" aria-hidden="true"><span class="octicon octicon-link"></span></a>PCMC $\S$ 5<a class="anchor-link" href="#PCMC-%24%5CS%24-5"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In section $5$, as en example to which we might apply the general price system described above, Sraffa asks us to consider an adjusted version of the two-commodity society considered in section one.</p>
+<p>
+$$280qr. wood + 12t. iron \rightarrow 575qr. wood$$
+</p>
+<p>
+$$120qr. wood + 8t. iron \rightarrow 20t. iron$$
+</p>
+<p>This society produces a social surplus of $175qr. wood$ every year. Sraffa then asserts that the exchange-ratio which enables the advances to be replaced and the profits to be distributed to both industries in proportion to their advances is $15qr. wood$ for $1t. iron$ and that the corresponding rate of profits in each industry is 25%. He then does the arithmatic for the iron industry to demonstrate that this exchange-ratio and profit rate satisfy the distributional assertions.</p>
+<p>To demonstrate how the price system becomes self-contradictory without the additional distributional assumption, consider the system of equations which results from plugging these methods of production into the conditions of production described in $\S 3$:</p>
+<p>
+$$280p_W + 12p_I = 575p_w \rightarrow 295p_W = 12p_I \rightarrow \frac{295}{12}p_W=1p_I$$
+</p>
+<p>
+$$120p_W + 8p_I = 20p_I \rightarrow 120p_W = 12P_I \rightarrow 10p_W=1p_I$$
+</p>
+<p>There is no pair of exchange values $p_W$ and $p_I$ which can satisfy both $\frac{295}{12}p_W=1p_I$ and $10p_W=1p_I$ simultaniously. The conditions of production described in section 3 will lead to inconsistency in any system that produces a surplus, so they must be modified when considering societies that produce more than the minimum necessary for replacement. Plugging the methods of production into the modified conditions of production described in section 4 leads to the price system and profit rate asserted by Sraffa in this section.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PCMC-$\S$-10">
+<a class="anchor" href="#PCMC-%24%5CS%24-10" aria-hidden="true"><span class="octicon octicon-link"></span></a>PCMC $\S$ 10<a class="anchor-link" href="#PCMC-%24%5CS%24-10"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In section 10, Sraffa intriduces an explicit representation of the quantities of labor used by each industry. He calls $L_a, L_b,..., L_k$ the annual quantities of labor respectively employed in the industries producing $A$, $B$,..., $K$; and he defines them as fractions of the total annual labor of society, which he takes as unity, so that</p>
+<p>
+$$L_a+ L_b+...+L_k=1$$
+</p>
+<p>He concludes the section by defining $w$ as the wage per unit of labor, which like prices will be expressed in terms of the chosen standard. Adding to his distributional assumptions, Sraffa presumes the wage is to be payed after the harvest each year as a share of the national product, meaning that $w$ can take values between $0$ and $1$.</p>
+<p>Sraffa treats these labor quantities as known variables in the same way that he treats the quantities of each commodity annually consumed and produced by each industry as known variables; and he asserts that they actually appear in the methods of production in the same way that those quantities do. That is, using the society introduced in $\S 5$, Sraffa appears to be assuming that the actual methods of production are</p>
+<p>
+$$280qr. wood + 12t. iron + L_w UnitsOfLabour \rightarrow 575qr. wood$$
+</p>
+<p>
+$$120qr. wood + 8t. iron + L_I UnitsOfLabour \rightarrow 20t. iron$$
+</p>
+<p>where $L_W$ and $L_I$ are the given quantities of units of labour used by the wood and iron industries, respectively.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PCMC-$\S$-11">
+<a class="anchor" href="#PCMC-%24%5CS%24-11" aria-hidden="true"><span class="octicon octicon-link"></span></a>PCMC $\S$ 11<a class="anchor-link" href="#PCMC-%24%5CS%24-11"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In secion 11, on the basis of the distributional assumptions of the previous section, Sraffa updates the conditions of production considered in $\S 4$ to</p>
+$$(A_{a}p_a+B_{a}p_{a}+\dots+K_{a}p_{k})(1+r) + L_a w = A p_{a}\\
+(A_{b}p_a+B_{b}p_{b}+\dots+K_{b}p_{k})(1+r) + L_b w = B p_{b}\\
+\vdots\\
+(A_{k}p_a+B_{k}p_{a}+\dots+K_{k}p_{k})(1+r) + L_k w = K p_{k}$$<p>where, as in the earlier cases, the system is assumed to be in a self-replicating state, such that $A_a + A_b +...+ A_k \leq A$, etc.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PCMC-$\S$-12">
+<a class="anchor" href="#PCMC-%24%5CS%24-12" aria-hidden="true"><span class="octicon octicon-link"></span></a>PCMC $\S$ 12<a class="anchor-link" href="#PCMC-%24%5CS%24-12"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this section, Sraffa defines the national income of the society - the commodities which are left over after subtracting from the national product the commodities consumed by the industries to produce it - as the standard in terms of which the wage and commodity prices are expressed. This definition leads to the equation</p>
+<p>
+$$[A-(A_a + A_b +...+A_k)]p_a + [B-(B_a + B_b +...+B_k)]p_b +...+[K-(K_a + K_b +...+K_K)]p_k=1$$
+</p>
+<p>This equation takes the place of that which results from defining some arbitrary individual commodity as the standard in terms of which the wage and commodity prices are expressed.</p>
+<p>The addition of this equation to the conditions of production forms a system of $k+1$ equations with $k+2$ unknown variables ($k$ prices, the wage $w$, and the rate of profits $r$). The system can therefore move with one degree of freedom; choosing one of the wage or the rate of profits as the free variable, and observing how varying that variable impacts the variation of the prices of commodities, allows one to study how shifting the distribution of the surplus can impacts the prices of commodities.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PCMC-$\S$-23">
+<a class="anchor" href="#PCMC-%24%5CS%24-23" aria-hidden="true"><span class="octicon octicon-link"></span></a>PCMC $\S$ 23<a class="anchor-link" href="#PCMC-%24%5CS%24-23"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In section 23, Sraffa identifies a complication to the study of distribution-shift induced price movements which results from expressing the prices of commodities in terms of one which is arbitrarily chosen as standard. Specifically, he identifies the fact that it is impossible to tell of any particular price-fluctuation whether it arises from the peculiarities of the commodity which is being measured or from those of the measuring standard.</p>
+<p>Reacting to this complication, he suggests that if we could discover some standard commodity which assures that price-fluctuations arise from the peculiarities of the commodity which is being measured, not those of the standard itself, then we could use it in the study of distribution-shift induced price-movements to isolate the price-movements of individual commodities such that they could be studied in a vacuum.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PCMC-$\S$-24">
+<a class="anchor" href="#PCMC-%24%5CS%24-24" aria-hidden="true"><span class="octicon octicon-link"></span></a>PCMC $\S$ 24<a class="anchor-link" href="#PCMC-%24%5CS%24-24"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In section 24, Sraffa argues that it is unlikely that an individual commodity could be found which possessed even approximately the necessary requisites to be such a standard commodity. He then posits that a mixture of commodities intepreted as a "composite commodity" might possess the necessary requisites; and in particular he suggests that a composite commodity which consists of the same commodities (combined in the same proportions) as does the aggregate of its own means of production would fulfill the requirements to the letter.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PCMC-$\S$-33">
+<a class="anchor" href="#PCMC-%24%5CS%24-33" aria-hidden="true"><span class="octicon octicon-link"></span></a>PCMC $\S$ 33<a class="anchor-link" href="#PCMC-%24%5CS%24-33"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In this section, Sraffa begins to state the problem of constructing a Standard commodity in general terms. The first step is finding a set of $k$ suitable multipliers - which may be called $q_a, q_b,...,q_k$ - to be applied respectively to the production-equations of commodities <em>'a'</em>, <em>'b'</em>,..., <em>'k'</em> such that the percentage by which the output of a commodity exceeds the quantity of it entering the aggregate means of production is equal for all commodities.</p>
+<p>Sraffa identifies this percentage as the Standard Ratio, and denotes it as $R$. To represent this first step, he introduces what he refers to as the "q-system" of equations</p>
+<p>
+$$(A_{a}q_a+A_{b}q_{a}+\dots+A_{k}q_{k})(1+R) = A q_{a}$$
+
+
+$$(B_{a}q_a+B_{b}q_{b}+\dots+B_{k}q_{k})(1+R) = B q_{b}$$
+
+
+$$\vdots$$
+
+
+$$(K_{a}q_a+K_{b}q_{b}+\dots+K_{k}q_{k})(1+R) = K q_{k}$$
+</p>
+<p>To complete this system of $k$ equations and $k+1$ ($q_a, q_b,...,q_k$ and $r$) unknowns, Sraffa defines an additional equation</p>
+<p>
+$$L_a q_a + L_b q_b + ... + L_k q_k = 1$$
+</p>
+<p>Sraffa identifies the role of this equation as defining the unit in which the multipliers are expressed in a way that assures the quantity of labor employed in the standard system is the same as that employed in the actual system of $\S 26$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PCMC-$\S$-34">
+<a class="anchor" href="#PCMC-%24%5CS%24-34" aria-hidden="true"><span class="octicon octicon-link"></span></a>PCMC $\S$ 34<a class="anchor-link" href="#PCMC-%24%5CS%24-34"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In section 34, Sraffa defines the multipliers which solve the q-system as $q_{a}^{'}, q_{b}^{'},...,q_{k}^{'}$ and asserts that the system described in $\S 11$ can be transformed into a standard system by applying those multipliers to the production equations as follows:</p>
+<p>
+$$q_{a}^{'}[(A_{a}p_a+B_{a}p_{a}+\dots+K_{a}p_{k})(1+r) + L_a w] = q_{a}^{'}A p_{a}$$
+
+
+$$q_{b}^{'}[(A_{b}p_a+B_{b}p_{b}+\dots+K_{b}p_{k})(1+r) + L_b w] = q_{b}^{'}B p_{b}$$
+
+
+$$\vdots$$
+
+
+$$q_{k}^{'}[(A_{k}p_a+B_{k}p_{a}+\dots+K_{k}p_{k})(1+r) + L_k w] = q_{k}^{'}K p_{k}$$
+</p>
+<p>From this standard system he derives the Standard national income which he henceforth adopts as the unit of wages and prices in the original system of production. The adoption is represented mathematically by replaceing the unit-defining equation of $\S 12$ with the equation</p>
+<p>
+$$[q_{a}^{'}A-(q_{a}^{'}A_a + q_{b}^{'}A_b +...+q_{k}^{'}A_k)]p_a + [q_{b}^{'}B-(q_{a}^{'}B_a + q_{b}^{'}B_b +...+q_{k}^{'}B_k)]p_b +...+[q_{k}^{'}K-(q_{a}^{'}K_a + q_{b}^{'}K_b +...+K_K)]p_k=1$$
+</p>
+<p>this equation also represents the composite commodity which possesses the necessary requisites to serve as the Standard commodity described in $\S 23$.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PCMC-$\S$-50">
+<a class="anchor" href="#PCMC-%24%5CS%24-50" aria-hidden="true"><span class="octicon octicon-link"></span></a>PCMC $\S$ 50<a class="anchor-link" href="#PCMC-%24%5CS%24-50"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In section 50, Sraffa introduces joint production. Joint production implies a system in which each method of production is allowed to produce more than one type of commodity and each type of commodity can be produced by more than one method of production.</p>
+<p>In transitioning to a consideration of joint production, Sraffa identifies that each method of production is no longer conveniently understood as its own industry.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PCMC-$\S$-51">
+<a class="anchor" href="#PCMC-%24%5CS%24-51" aria-hidden="true"><span class="octicon octicon-link"></span></a>PCMC $\S$ 51<a class="anchor-link" href="#PCMC-%24%5CS%24-51"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In section 51, Sraffa identifies that each production-process is characterized no longer by the commodity which it produces, but by the proportions in which it uses and the proportions in which it produces, the various commodities.</p>
+<p>As such, he introduces new notation, distinguishing process by arbitrarily assigned numbers $1,2,...,k$ instead of by their products <em>'a'</em>, <em>'b'</em>,..., <em>'k'</em>. Thus, $A_1$, $B_1$,...,$K_1$ denotes the quantities of the various goods <em>'a'</em>, <em>'b'</em>,..., <em>'k'</em> which are used as means of production in the first process, etc. Further, to distinguish the quantities produced by each process from the means of production, Sraffa encloses their suffixes in parenthesis; thus $A_{(1)}$, $B_{(1)}$,...,$K_{(1)}$ denotes the quantities of the various goods <em>'a'</em>, <em>'b'</em>,..., <em>'k'</em> which are produced the first process, etc.</p>
+<p>Applying this notation, Sraffa then asserts the conditions of production for the general case of joint production as</p>
+<p>
+$$(A_{1}p_a+B_{1}p_{a}+\dots+K_{1}p_{k})(1+r) + L_1 w = A_{(1)}p_a+B_{(1)}p_{a}+\dots+K_{(1)}p_{k}$$
+
+
+$$(A_{2}p_a+B_{2}p_{a}+\dots+K_{2}p_{k})(1+r) + L_2 w = A_{(2)}p_a+B_{(2)}p_{a}+\dots+K_{(2)}p_{k}$$
+
+
+$$\vdots$$
+
+
+$$(A_{k}p_a+B_{k}p_{a}+\dots+K_{k}p_{k})(1+r) + L_k w = A_{(k)}p_a+B_{(k)}p_{a}+\dots+K_{(k)}p_{k}$$
+</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PCMC-$\S$-52">
+<a class="anchor" href="#PCMC-%24%5CS%24-52" aria-hidden="true"><span class="octicon octicon-link"></span></a>PCMC $\S$ 52<a class="anchor-link" href="#PCMC-%24%5CS%24-52"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In section 52, Sraffa asserts that the standard commodity in the case of joint production can be constructed using the same method as was done in the single-product case; by finding a set of multipliers which, applied to the $k$ production equations, will result in the quantity of each commodity in the aggregate means of production of the system bearing to the quantity of the same commodity in the aggregate product a ratio which is equal for all commodities.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PCMC-$\S$-53">
+<a class="anchor" href="#PCMC-%24%5CS%24-53" aria-hidden="true"><span class="octicon octicon-link"></span></a>PCMC $\S$ 53<a class="anchor-link" href="#PCMC-%24%5CS%24-53"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In section 53, Sraffa identifies that, when constructing a standard system from a system with joint production, it will frequently happen that some of the $q$ multipliers will be negative.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PCMC-$\S$-56">
+<a class="anchor" href="#PCMC-%24%5CS%24-56" aria-hidden="true"><span class="octicon octicon-link"></span></a>PCMC $\S$ 56<a class="anchor-link" href="#PCMC-%24%5CS%24-56"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In section 56, Sraffa asserts as a consequence of the existence of negative multipliers the impossibility of visualizing the Standard syestem in the case of joint production as a conceivable rearrangement of the actual processes. He asserts that no meaning can be attached to the 'negative industries' which such multipliers entail, and that we must therefore in the case of joint production be content with the system of abstract equations, transformed by  appropriate multipliers, without trying to think of it as having a bodily existence.</p>
+<p>Nevertheless, because the purpose of the Standard system is to construct the Standard commodity, and negative multipliers can be intepreted as implying an incurred debt in the context of the Standard commodity, Sraffa finds that this systemic unphysicality does not contribute negatively to the propriety of using the Standard commodity to express the wage and commodity prices in the physical system the Standard system is constructed from.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="From-PCMC-to-CRNT">
+<a class="anchor" href="#From-PCMC-to-CRNT" aria-hidden="true"><span class="octicon octicon-link"></span></a>From PCMC to CRNT<a class="anchor-link" href="#From-PCMC-to-CRNT"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Sraffa's conditions of production for the general case of joint production can be recovered by 1) parameterizing the growth rate of a solution with a uniform-growth evolutionary constraint and an isolated structural constraint as $\pi = \frac{r}{1-w}$ and 2) assuming the mass added to the solution by the $j$th chemical reaction is $L_j$ for $j=1...J$.</p>
+<p>The mass flow constraint requires that either $[B-(1+\pi)A]^T\vec{q}=\vec{0}$ or $[B-(1+\pi)A]\vec{m}=\vec{0}$. Inserting the growth rate parameterization into the mass vector requirement and rearranging leads to the system of equations</p>
+<p>
+$$(1+r)A\vec{m}+w(B-A)\vec{m}=B\vec{m}$$
+</p>
+<p>The mass-addition assumption can be represented by the system of equations $(B-A)\vec{m}=\vec{L}$ (If you assume mass is conserved in chemical reactions you have the system $(B-A)\vec{m}=\vec{0}$). Inserting this system of equations into the mass vector requirement results in</p>
+<p>
+$$(1+r)A\vec{m}+w\vec{L}=B\vec{m}$$
+</p>
+<p>Intepreting chemical reactions as methods of production and chemical masses as commodity exchange values, this equation is mathematically equivelant to the matrix form of Sraffa's conditions of production for the general case of joint production as presented in $\S 51$.</p>
+<p>Sraffa identifies the vector $\vec{L}$ as the vector of quantities of labor required for each method of production. He assumes that the quantities of labor have their own unit of measurement, and that the quantities directly enter into the methods of production. He then inteprets the parameter $w$ as the exchange-value per unit of labor, such that the term $w\vec{L}$ has units of exchange value.</p>
+<p>Starting from the CRNT perspective, these identifications, assumptions, and intepretations are misguided. The vector $\vec{L}$ is the vector of mass-additions, and therefore has units of mass. Analogizing to exchange values, each component of $\vec{L}$ has units of exchange-value, not labor. Further, the the quantities of exchange-value $L_j$ cannot enter into the methods of production - if they were included in the methods of production, then units of exchange value would be found in the entries of the matricies $A$ and $B$, and the system of equations $(B-A)\vec{m}=\vec{L}$ would be condtradictory by dimensional analysis. The parameter $w$ must also be unitless when starting from the CRNT perspective, just like $r$. If it weren't, the conditions of production would be contradictory by dimensional analysis as not all terms would have units of exchange value.</p>
+<p>Rearranging the reaction rate vector requirement of the mass flow constraint leads to the system of equations</p>
+<p>
+$$(1+\pi)A^T\vec{q}=B^T\vec{q}$$
+</p>
+<p>This system of equations is mathematically equivelant to the matrix form of Saffa's joint production q-system of $\S 63$, ignoring the difference between his Basic equations and his productive processes. Intepreting the chemical growth rate as the maximum rate of profits and chemical reaction rates as q-multipliers, this equivelance suggests that the act of identifying a standard commodity can be understood as identifying the method of production execution rates that assure uniform commodity growth. Further, solutions involving negative q-multipliers can be understood as requiring a reversal of the negative-multiplier processes in order for a physically permissable solution to exist.</p>
+<p>Sraffa inteprets the q-system as a non-physical system with no direct relation to the physical system that motivates the conditions of production. From the CRNT perspective, the q-system represents the same physical system that motivates the conditions of production (only half true, ignoring subtlties of standard commodity because time. The systems appear linked by the assumed amount of mass generated by the reactions per unit time, see sections $\S 10+\S 12$, $\S 33+\S 34$). Sraffa's q-multipliers are the reaction rates which permit uniform commodity growth given the specified methods of production; his original system implicitly assumes $\vec{q}=\vec{1}$.</p>
+<p>Given the notion that distributional assumptions can be incorporated through parameterization of the commodity growth rate, Sraffa's conditions of producuction can easily be extended beyond the basic capitalist + worker society. For example, consider a society which, in addition to the capitalists that profit on their commidity investments and the workers which recieve a portion of the surplus, has a government that taxes the surplus and corrupt government officials that steal from the surplus. If the tax rate and corruption rate are considered to be portions of the surplus in the same sense as wages, then this distributional assumption can be captured by the growth rate parameterization</p>
+<p>
+$$\pi = \frac{r}{1-w-t-c}$$
+</p>
+<p>where $0&lt;=w+t+c&lt;=1$. The eventual Sraffian conditions of production under this parameterization become</p>
+<p>
+$$(1+r)A\vec{p}+(w+t+c)\vec{L}=B\vec{p}$$
+</p>
+<p>When wages, taxes, and corruption are all 0, the profit rate is at its maximum level, $\pi$. Whenever wages, taxes, or corruption increase, the profit rate decreases. Obviously, with three surplus-proportion parameters, the effect of varying the surplus-proportion parameters on the profit rate and commodity prices becomes difficult to visualize. But, for any combination of them such that two of three are zero - or $n$ of $n+1$, in general, for this form of parameterization - the effect on profits and relative prices of varying the non-zero parameter is identical to that of varying Sraffa's wage. The Standard Commodity will have the same properties in this society as it does in the basic capitalist + worker one, in the PCMC $\S 23$ sense.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="From-CRNT-to-Production-Reaction-Network-Theory">
+<a class="anchor" href="#From-CRNT-to-Production-Reaction-Network-Theory" aria-hidden="true"><span class="octicon octicon-link"></span></a>From CRNT to Production Reaction Network Theory<a class="anchor-link" href="#From-CRNT-to-Production-Reaction-Network-Theory"> </a>
+</h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Assume there exists a culture of $K$ different commodities in a society. Assume the composition of the culture - the abundances of the commodities in the society - can change over time as a result of production reactions occuring in the society or commodity flows into the society. Assume the culture exists in a world allowing for $J$ different production reactions, where each reaction occurs at some rate and upon occurrence consumes some combination of the $K$ different commodities to produce another.</p>
+<p>If $a_{jk}$ is the number of units of commodity $k$ consumed by reaction $j$, $b_{jk}$ is the number of units of commodity $k$ produced by reaction $j$, $q_j$ is the number of times reaction $j$ occurs per unit-time, and $c_k$ is the chosen unit of commodity $k$ (tons of, quarters of, UnitsOf, etc), then the society's $j$th method of production - the $j$th "production reaction" - can be represented as:</p>
+<p>
+$$P_j: \sum_{k=1}^{K} a_{jk}c_k \xrightarrow[]{q_j} \sum_{k=1}^{K} b_{jk}c_k$$
+</p>
+<p>(which is exactly Von Neumann's symbolic representation of the productive process - this is perhaps not surprising, given that he initially studied chemical engineering <a href="http://piketty.pse.ens.fr/files/VonNeumann1945.pdf">http://piketty.pse.ens.fr/files/VonNeumann1945.pdf</a>). I choose to identify explorations of this reaction system using ideas borrowed from CRNT as Production Reaction Network Theory (PRNT).</p>
+<p>In this section I'll consider ideas that might be borrowed from CRNT and applied to PRNT. Specifically, I'll consider mass action kinetics, biological switches, and deficiency theorums.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Mass-Action-Kinetics">
+<a class="anchor" href="#Mass-Action-Kinetics" aria-hidden="true"><span class="octicon octicon-link"></span></a>Mass Action Kinetics<a class="anchor-link" href="#Mass-Action-Kinetics"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>A typical assumption in CRNT is that reaction rate $j$ takes the form $q_j=r_j\prod_{k}^{K}C_k(t)^{a_{jk}}$ such that the rate at which a reaction occurs depends on the abundance of each required chemical, with higher rates of occurance when the required chemicals are more abundant. This assumption assures that a reaction cannot occur unless all the required chemicals are present in the solution.</p>
+<p>This assumption takes the same mathematical form as the generalized Cobb-Douglas production function. Speculation naturally suggests that the basic Cobb-Douglas production function might be interpreted as representing a single-method society with two commodities, labor and capital.</p>
+<p>The PCMC framework can be thought of as involving an intentionally executed plan, where methods of production are executed at specified rates. In a CRNT setting the reactions occur without any planning or intention, at rates largeley dependent on the composition of the solution. Each reaction rate does include an arbitrary constant ($r_j$ for reaction rate $q_j$), so there is perhaps some room for planning in PRNT; but plans cannot be relied upon as completely determining the rate at which production reactions occur. In actual chemical engineering, the values of the arbitrary constants tend to be determined emperically.</p>
+<p><a href="http://www-personal.umich.edu/~dsbaero/library/DSBCSMPapers/MassActionKinetics.pdf">http://www-personal.umich.edu/~dsbaero/library/DSBCSMPapers/MassActionKinetics.pdf</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Biological-Switches">
+<a class="anchor" href="#Biological-Switches" aria-hidden="true"><span class="octicon octicon-link"></span></a>Biological Switches<a class="anchor-link" href="#Biological-Switches"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Later in PCMC, Sraffa considers switches in the executed method of production that result from choosing to execute the most profitable method of production as the most profitable method of production changes with variation of the distributional parameters.</p>
+<p>In CRNT, there is the idea of biological switches. A biological switch occurs when the dominant chemical reaction changes as a result of the composition of the solution crossing some threshold, triggering some change in the macroscopically occuring biological behavior. This idea might be extended to PRNT to model how the methods of production actually being executed in a society depend on the dynamics of the culture of commodities in the society.</p>
+<p><a href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002039">https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1002039</a></p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Deficiency-Theorums">
+<a class="anchor" href="#Deficiency-Theorums" aria-hidden="true"><span class="octicon octicon-link"></span></a>Deficiency Theorums<a class="anchor-link" href="#Deficiency-Theorums"> </a>
+</h3>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>In CRNT, deficiency theorums establish existence and uniqueness criteria for stable solutions in chemical reaction networks, based soley on the graph structure of the reaction network.</p>
+<p>This might be extended to PRNT to determine whether or not a given production reaction network allows for a stable solution, etc.</p>
+<p><a href="https://www.springer.com/gp/book/9783030038571">https://www.springer.com/gp/book/9783030038571</a></p>
+
+</div>
+</div>
+</div>
+</div>
+
+
+
+  </div><!-- from https://github.com/utterance/utterances -->
+<script src="https://utteranc.es/client.js"
+        repo="dankee-yoodle/iob"
+        issue-term="title"
+        label="blogpost-comment"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script><a class="u-url" href="/iob/2020/09/03/Production-Reaction-Network-Theory.html" hidden></a>
+</article>
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/iob/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/iob/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/iob/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>Nothing is done, and most things have not been started</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/dankee-yoodle" title="dankee-yoodle"><svg class="svg-icon grey"><use xlink:href="/iob/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/YoodleDankee" title="YoodleDankee"><svg class="svg-icon grey"><use xlink:href="/iob/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
